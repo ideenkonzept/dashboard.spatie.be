@@ -42,10 +42,14 @@ new Vue({
         if (window.dashboard.usingNodeServer) {
             options = {
                 broadcaster: 'socket.io',
-                host: 'http://dashboard.spatie.be:6001',
+                host: 'http://dashboard.test',
+                auth: {
+                    headers: {
+                        Authorization: 'Bearer ' + AUTH_API_TOKEN,
+                    },
+                },
             };
         }
-
         this.echo = new Echo(options);
     },
 });
