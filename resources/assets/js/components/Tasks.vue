@@ -1,5 +1,5 @@
 <template>
-    <tile :position="position" modifiers="overflow">
+    <tile :position="position" :modifiers="modifiers">
         <section class="github-file">
             <h1 class="github-file__title">{{ teamMember }}</h1>
             <div class="github-file__content" v-html="tasks"></div>
@@ -19,14 +19,22 @@ export default {
 
     mixins: [echo, saveState],
 
-    props: ['teamMember', 'position'],
+    props: ['teamMember', 'position','base_modifiers'],
 
     data() {
         return {
             tasks: '',
         };
     },
+    computed : {
+        modifiers : function() {
+            if(typeof this.base_modifiers !== 'undefined'){
+                return `overflow ${this.base_modifiers}`;
+            }
 
+            return 'overflow';
+        }
+    },
     methods: {
         getEventHandlers() {
             return {

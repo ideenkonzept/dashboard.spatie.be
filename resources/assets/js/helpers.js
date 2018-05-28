@@ -1,4 +1,5 @@
 import moment from 'moment';
+import de from 'moment/locale/de';
 
 export function formatNumber(value) {
     if (!value) {
@@ -23,10 +24,10 @@ export function formatDuration(start) {
 }
 
 export function relativeDate(value) {
-    const date = moment(value);
+    const date = moment(value).locale('de');
 
     if (moment().isSame(date, 'd')) {
-        return 'Today';
+        return 'Heute';
     }
 
     if (
@@ -34,7 +35,7 @@ export function relativeDate(value) {
             .add(1, 'day')
             .isSame(date, 'd')
     ) {
-        return 'Tomorrow';
+        return 'Morgen';
     }
 
     if (date.isBetween(moment().add(1, 'day'), moment().add(8, 'days'), 'day')) {

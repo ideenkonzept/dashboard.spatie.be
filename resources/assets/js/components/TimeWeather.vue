@@ -19,6 +19,7 @@
 <script>
 import Tile from './atoms/Tile';
 import moment from 'moment-timezone';
+import de from 'moment/locale/de';
 import weather from '../services/weather/Weather';
 
 export default {
@@ -68,9 +69,11 @@ export default {
     methods: {
         refreshTime() {
             this.date = moment()
+                .locale('de')
                 .tz(this.timeZone)
                 .format(this.dateFormat);
             this.time = moment()
+                .locale('de')
                 .tz(this.timeZone)
                 .format(this.timeFormat);
         },

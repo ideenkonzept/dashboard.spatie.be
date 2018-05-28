@@ -42,6 +42,14 @@
     --tile-background-color: var(--red);
 }
 
+.tile--female  h1 {
+    color: #b7007b !important;
+}
+
+.tile--male  h1 {
+    color: #009de0 !important;
+}
+
 .tile--transparent {
     --tile-background-color: var(--dashboard-background-color);
 
