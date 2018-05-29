@@ -4,10 +4,6 @@ _ide_helper*.php
 /node_modules
 /npm-debug.log
 /public/build
-/public/css
-/public/js
-/public/media
-/public/mix-manifest.json
 /vendor
 package-lock.json
 /.idea
