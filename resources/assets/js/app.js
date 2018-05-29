@@ -43,13 +43,9 @@ new Vue({
             options = {
                 broadcaster: 'socket.io',
                 host: 'http://dashboard.test',
-                auth: {
-                    headers: {
-                        Authorization: 'Bearer ' + AUTH_API_TOKEN,
-                    },
-                },
             };
         }
+
         this.echo = new Echo(options);
     },
 });

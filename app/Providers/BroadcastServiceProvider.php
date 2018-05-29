@@ -18,7 +18,7 @@ class BroadcastServiceProvider extends ServiceProvider
          */
         Broadcast::routes();
 
-        Broadcast::channel('dashboard', function (User $user) {
+        Broadcast::channel('dashboard', function ($user) {
             return true;
         });
     }

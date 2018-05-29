@@ -9,6 +9,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
+
+    	auth()->loginUsingId(1);
         return view('dashboard')->with([
             'pusherKey' => config('broadcasting.connections.pusher.key'),
 
