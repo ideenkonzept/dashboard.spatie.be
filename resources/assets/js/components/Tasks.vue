@@ -2,7 +2,11 @@
     <tile :position="position" :modifiers="modifiers">
         <section class="github-file">
             <h1 class="github-file__title">{{ teamMember }}</h1>
-            <div class="github-file__content" v-html="tasks"></div>
+            <div class="github-file__content">
+                <ul class="tasks">
+                    <li v-for="task in tasks">{{task}}</li>
+                </ul>
+            </div>
         </section>
     </tile>
 </template>
@@ -52,3 +56,9 @@ export default {
     },
 };
 </script>
+
+<style>
+    ul.tasks > li {
+        font-size: 14px;
+    }
+</style>
