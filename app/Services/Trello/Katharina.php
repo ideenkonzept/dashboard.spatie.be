@@ -17,6 +17,8 @@ class Katharina extends TrelloApi {
 	}
 
 	public function fetchAllTasks() {
-		return $this->client->members()->cards()->all('katharinaschluss');
+		return $this->client->lists()->cards()->all('5b0e8eda6a98dc62550e04b9');
+
+//		return $this->client->members()->cards()->all('katharinaschluss');
 	}
 }

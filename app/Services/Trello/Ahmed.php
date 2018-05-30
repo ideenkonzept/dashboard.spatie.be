@@ -17,6 +17,7 @@ class Ahmed extends TrelloApi {
 	}
 
 	public function fetchAllTasks() {
-		return $this->client->members()->cards()->all( 'ahmeddabak_work' );
+		return $this->client->lists()->cards()->all('5b0e8ed2311b16756eef2114');
+//		return $this->client->members()->cards()->all( 'ahmeddabak_work', ['open'] );
 	}
 }

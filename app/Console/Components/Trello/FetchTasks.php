@@ -8,6 +8,7 @@ use App\Services\Trello\Helen;
 use App\Services\Trello\Katharina;
 use App\Services\Trello\Markus;
 use App\Services\Trello\Michelle;
+use App\Services\Trello\Sonia;
 use Illuminate\Console\Command;
 
 class FetchTasks extends Command {
@@ -22,7 +23,8 @@ class FetchTasks extends Command {
 			Michelle::class,
 			Katharina::class,
 			Helen::class,
-			Markus::class
+			Markus::class,
+			Sonia::class
 		];
 
 		$tasks = [];

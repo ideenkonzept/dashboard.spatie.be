@@ -17,6 +17,8 @@ class Markus extends TrelloApi {
 	}
 
 	public function fetchAllTasks() {
-		return $this->client->members()->cards()->all( 'markusmeier710' );
+		return $this->client->lists()->cards()->all('5b0e8ed0aa21fd013a496cee');
+
+//		return $this->client->members()->cards()->all( 'markusmeier710' );
 	}
 }
