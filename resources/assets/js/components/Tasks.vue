@@ -56,9 +56,3 @@ export default {
     },
 };
 </script>
-
-<style>
-    ul.tasks > li {
-        font-size: 14px;
-    }
-</style>
