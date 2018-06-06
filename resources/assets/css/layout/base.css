@@ -8,7 +8,7 @@
     font-size: inherit;
     font-family: inherit;
     line-height: inherit;
-    cursor: none;
+    cursor: none !important;
 }
 
 *:before,

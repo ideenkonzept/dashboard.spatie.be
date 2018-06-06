@@ -5,11 +5,12 @@
     @javascript(compact('pusherKey', 'pusherCluster', 'usingNodeServer'))
 
     <dashboard id="dashboard" columns="6" rows="4">
-        <twitter :initial-tweets="{{ json_encode($initialTweets) }}" position="a1:a4"></twitter>
+        <twitter :initial-tweets="{{ json_encode($initialTweets) }}" position="a1:a3"></twitter>
         <packagist position="b1"></packagist>
         <npm position="b2"></npm>
         <github position="b3"></github>
-        <uptime position="b4"></uptime>
+        {{--<uptime position="b4"></uptime>--}}
+        <world-cup position="a4:b4"></world-cup>
         <music position="c1:d1"></music>
         <tasks team-member="michelle" position="c2" base_modifiers="female"></tasks>
         <tasks team-member="helen" position="d2" base_modifiers="male"></tasks>
