@@ -23,7 +23,7 @@ export default {
 
     mixins: [echo, saveState],
 
-    props: ['teamMember', 'position','base_modifiers'],
+    props: ['teamMember', 'position','baseModifiers'],
 
     data() {
         return {
@@ -32,8 +32,8 @@ export default {
     },
     computed : {
         modifiers : function() {
-            if(typeof this.base_modifiers !== 'undefined'){
-                return `overflow ${this.base_modifiers}`;
+            if(typeof this.baseModifiers !== 'undefined'){
+                return `overflow ${this.baseModifiers}`;
             }
 
             return 'overflow';

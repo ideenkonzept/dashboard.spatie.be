@@ -2,6 +2,8 @@ import './bootstrap.js';
 
 import Echo from 'laravel-echo';
 import Vue from 'vue';
+import moment from 'moment-timezone';
+
 
 import Dashboard from './components/Dashboard';
 import Calendar from './components/Calendar';
@@ -15,9 +17,15 @@ import TimeWeather from './components/TimeWeather';
 import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
 import WorldCup from './components/WorldCup/WorldCup';
+import AnimatedTask from './components/AnimatedTask';
 
 new Vue({
     el: '#dashboard',
+
+    data: {
+        waterThePlants: false,
+        scheduler: null
+    },
 
     components: {
         Dashboard,
@@ -31,7 +39,8 @@ new Vue({
         TimeWeather,
         Twitter,
         Uptime,
-        WorldCup
+        WorldCup,
+        AnimatedTask
     },
 
     created() {
@@ -49,5 +58,18 @@ new Vue({
         }
 
         this.echo = new Echo(options);
+
+        this.scheduler = setInterval(this.handler, 1000 * 60)
     },
+
+    methods: {
+        handler() {
+            this.updateWaterThePlants();
+        },
+        updateWaterThePlants() {
+            console.log('scheduler');
+            let result = (moment().weekday() === 3 && moment().hour() > 11 && moment().hour() < 13) || (moment().weekday() === 0 && moment().hour() > 11 && moment().hour() < 13);
+            this.waterThePlants = result;
+        }
+    }
 });
