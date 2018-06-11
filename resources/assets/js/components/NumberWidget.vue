@@ -53,15 +53,15 @@
             handler() {
                 let vm = this;
 
-                axios.get('http://firmen-daten.kunden.domains/ajax/count')
+                axios.get('https://firmen-daten.kunden.domains/ajax/count')
                     .then(function (response) {
                         vm.firmenData = response.data.count;
                     });
 
-                // axios.get('https://partyzettel.org/api/statistics')
-                //     .then(function (response) {
-                //         vm.ZettelCount = response.data.default_download;
-                //     });
+                axios.get('https://partyzettel.org/api/statistics')
+                    .then(function (response) {
+                        vm.ZettelCount = response.data.default_download;
+                    });
             }
         }
 
