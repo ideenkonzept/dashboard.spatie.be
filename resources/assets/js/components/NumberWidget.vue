@@ -9,7 +9,7 @@
                 </li>
                 <li class="statistic">
                 <span class="statistic__label">Partyzettel Downloads</span>
-                <span class="statistic__count">{{ ZettelCount }}</span>
+                <span class="statistic__count">{{ zettelCount }}</span>
                 </li>
                 <!--<li class="statistic">-->
                 <!--<span class="statistic__label">Total</span>-->
@@ -33,7 +33,7 @@
         data: function () {
             return {
                 firmenData: 0,
-                ZettelCount : 0
+                zettelCount : 0
             }
         },
         mounted() {
@@ -47,7 +47,7 @@
 
             axios.get('https://partyzettel.org/api/statistics')
                 .then(function (response) {
-                    vm.ZettelCount = response.data.default_download;
+                    vm.zettelCount = response.data.data.default_download;
                 });
 
             setInterval(this.handler, 1000 * 60);
@@ -65,7 +65,7 @@
 
                 axios.get('https://partyzettel.org/api/statistics')
                     .then(function (response) {
-                        vm.ZettelCount = response.data.default_download;
+                        vm.zettelCount = response.data.data.default_download;
                     });
             }
         }
