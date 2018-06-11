@@ -4,6 +4,7 @@ namespace App\Console\Components\Trello;
 
 use App\Events\Tasks\TasksFetched;
 use App\Services\Trello\Ahmed;
+use App\Services\Trello\Ali;
 use App\Services\Trello\Helen;
 use App\Services\Trello\Katharina;
 use App\Services\Trello\Markus;
@@ -24,7 +25,8 @@ class FetchTasks extends Command {
 			Katharina::class,
 			Helen::class,
 			Markus::class,
-			Sonia::class
+			Sonia::class,
+			Ali::class
 		];
 
 		$tasks = [];

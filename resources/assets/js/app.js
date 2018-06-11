@@ -67,9 +67,7 @@ new Vue({
             this.updateWaterThePlants();
         },
         updateWaterThePlants() {
-            console.log('scheduler');
-            let result = (moment().weekday() === 3 && moment().hour() > 11 && moment().hour() < 13) || (moment().weekday() === 0 && moment().hour() > 11 && moment().hour() < 13);
-            this.waterThePlants = result;
+            this.waterThePlants = (moment().weekday() === 0 && moment().hour() >= 11 && moment().hour() <= 13) || (moment().weekday() === 3 && moment().hour() >= 11 && moment().hour() <= 13);
         }
     }
 });
