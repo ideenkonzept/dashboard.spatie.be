@@ -5,8 +5,6 @@
     "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "format": "prettier --write \"**/*.{css,js,vue}\" && composer fix-cs",
-    "echo server" : "laravel-echo-server start",
-    "queue" : "php artisan queue:work"
   },
   "dependencies": {
     "axios": "^0.16.2",

@@ -18,6 +18,8 @@ import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
 import WorldCup from './components/WorldCup/WorldCup';
 import AnimatedTask from './components/AnimatedTask';
+import NumberWidget from './components/NumberWidget';
+
 
 new Vue({
     el: '#dashboard',
@@ -40,7 +42,8 @@ new Vue({
         Twitter,
         Uptime,
         WorldCup,
-        AnimatedTask
+        AnimatedTask,
+        NumberWidget
     },
 
     created() {

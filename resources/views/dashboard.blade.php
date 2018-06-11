@@ -7,7 +7,9 @@
     <dashboard id="dashboard" columns="6" rows="4">
         <twitter :initial-tweets="{{ json_encode($initialTweets) }}" position="a1:a3"></twitter>
         <packagist position="b1"></packagist>
-        <npm position="b2"></npm>
+        {{--<npm position="b2"></npm>--}}
+        <number-widget position="b2"></number-widget>
+
         <github position="b3"></github>
         {{--<uptime position="b4"></uptime>--}}
         <world-cup position="a4:b4"></world-cup>
@@ -30,5 +32,4 @@
         <calendar position="f1:f3"></calendar>
         <internet-connection></internet-connection>
     </dashboard>
-
 @endsection
