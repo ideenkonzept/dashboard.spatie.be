@@ -5,11 +5,11 @@
             <ul>
                 <li class="statistic">
                     <span class="statistic__label">Firmen Data</span>
-                    <span class="statistic__count">{{firmenData}}</span>
+                    <span class="statistic__count">{{ numberWithCommas(firmenData)}}</span>
                 </li>
                 <li class="statistic">
                 <span class="statistic__label">Partyzettel Downloads</span>
-                <span class="statistic__count">{{ zettelCount }}</span>
+                <span class="statistic__count">{{ numberWithCommas(zettelCount) }}</span>
                 </li>
                 <!--<li class="statistic">-->
                 <!--<span class="statistic__label">Total</span>-->
@@ -67,6 +67,13 @@
                     .then(function (response) {
                         vm.zettelCount = response.data.data.default_download;
                     });
+            },
+            numberWithCommas(x) {
+                x = x.toString();
+                var pattern = /(-?\d+)(\d{3})/;
+                while (pattern.test(x))
+                    x = x.replace(pattern, "$1.$2");
+                return x;
             }
         }
 
