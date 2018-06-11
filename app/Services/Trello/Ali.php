@@ -17,6 +17,6 @@ class Ali extends TrelloApi {
 	}
 
 	public function fetchAllTasks() {
-		return $this->client->lists()->cards()->all('5b0e8ec90d23e37af2f7acdb');
+		return $this->client->lists()->cards()->all('5b0e8ee5e93ebc3b01aa5a7b');
 	}
 }

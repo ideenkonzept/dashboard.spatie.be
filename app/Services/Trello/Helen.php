@@ -18,7 +18,5 @@ class Helen extends TrelloApi {
 
 	public function fetchAllTasks() {
 		return $this->client->lists()->cards()->all('5b0e8edd476c5da658995e64');
-
-//		return $this->client->members()->cards()->all('helenscholz' );
 	}
 }

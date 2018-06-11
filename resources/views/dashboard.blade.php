@@ -15,11 +15,10 @@
         <tasks team-member="michelle" position="c2" base-modifiers="female"></tasks>
 
         <animated-task v-if="waterThePlants" team-member="helen" position="d2" base-modifiers="male" image-link="{{asset('images/blumen_giessen.gif')}}"></animated-task>
-
         <tasks v-else team-member="helen" position="d2" base-modifiers="male"></tasks>
 
         <tasks team-member="ali" position="c3" base-modifiers="male"></tasks>
-        <tasks team-member="mathäus" position="d3" base-modifiers="male"></tasks>
+        <tasks team-member="mathaeus" position="d3" base-modifiers="male"></tasks>
         <tasks team-member="katharina" position="c4" base-modifiers="female"></tasks>
         <tasks team-member="ahmed" position="d4" base-modifiers="male"></tasks>
         <tasks team-member="mayar" position="e2" base-modifiers="male"></tasks>
