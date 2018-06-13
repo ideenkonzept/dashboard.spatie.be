@@ -42,7 +42,7 @@ export function relativeDate(value) {
         return date.format('dddd');
     }
 
-    return 'In ' + date.toNow(true);
+    return date.fromNow();
 }
 
 export function relativeDateTime(value) {
