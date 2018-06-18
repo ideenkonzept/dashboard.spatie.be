@@ -4,17 +4,21 @@
             <h1>Statistics</h1>
             <ul>
                 <li class="statistic">
-                    <span class="statistic__label">Firmen Data</span>
-                    <span class="statistic__count">{{ numberWithCommas(firmenData)}}</span>
+                    <span class="statistic__label">Firmen Data 1</span>
+                    <span class="statistic__count">{{ numberWithCommas(firmenData1)}}</span>
+                </li>
+                <li class="statistic">
+                    <span class="statistic__label">Firmen Data 2</span>
+                    <span class="statistic__count">{{ numberWithCommas(firmenData2)}}</span>
+                </li>
+                <li class="statistic">
+                    <span class="statistic__label">Firmen Data 3</span>
+                    <span class="statistic__count">{{ numberWithCommas(firmenData3)}}</span>
                 </li>
                 <li class="statistic">
                 <span class="statistic__label">Partyzettel Downloads</span>
                 <span class="statistic__count">{{ numberWithCommas(zettelCount) }}</span>
                 </li>
-                <!--<li class="statistic">-->
-                <!--<span class="statistic__label">Total</span>-->
-                <!--<span class="statistic__count">{{ formatNumber(total) }}</span>-->
-                <!--</li>-->
             </ul>
         </section>
     </tile>
@@ -32,27 +36,14 @@
         props: ['position'],
         data: function () {
             return {
-                firmenData: 0,
+                firmenData1: 0,
+                firmenData2: 0,
+                firmenData3: 0,
                 zettelCount : 0
             }
         },
         mounted() {
-
-            let vm = this;
-
-            axios.get('https://firmen-daten.kunden.domains/ajax/count')
-                .then(function (response) {
-                    vm.firmenData = response.data.count;
-                });
-
-            axios.get('https://partyzettel.org/api/statistics')
-                .then(function (response) {
-                    vm.zettelCount = response.data.data.default_download;
-                });
-
             setInterval(this.handler, 1000 * 60);
-
-
         },
         methods: {
             handler() {
@@ -60,7 +51,17 @@
 
                 axios.get('https://firmen-daten.kunden.domains/ajax/count')
                     .then(function (response) {
-                        vm.firmenData = response.data.count;
+                        vm.firmenData1 = response.data.count;
+                    });
+
+                axios.get('https://firmen-daten2.kunden.domains/ajax/count')
+                    .then(function (response) {
+                        vm.firmenData2 = response.data.count;
+                    });
+
+                axios.get('https://firmen-daten3.kunden.domains/ajax/count')
+                    .then(function (response) {
+                        vm.firmenData3 = response.data.count;
                     });
 
                 axios.get('https://partyzettel.org/api/statistics')
