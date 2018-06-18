@@ -9,7 +9,7 @@ use App\Services\Trello\Helen;
 use App\Services\Trello\Katharina;
 use App\Services\Trello\Kevin;
 use App\Services\Trello\Markus;
-use App\Services\Trello\Mathaeus;
+use App\Services\Trello\Matthaeus;
 use App\Services\Trello\Mayar;
 use App\Services\Trello\Michelle;
 use App\Services\Trello\Sonia;
@@ -30,7 +30,7 @@ class FetchTasks extends Command {
 			Markus::class,
 			Sonia::class,
 			Ali::class,
-			Mathaeus::class,
+			Matthaeus::class,
 			Mayar::class,
 			Kevin::class
 		];

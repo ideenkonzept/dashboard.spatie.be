@@ -71,12 +71,12 @@ class TrelloServiceProvider extends ServiceProvider {
 			return new Ali( $client );
 		} );
 
-		$this->app->singleton( Mathaeus::class, function () {
+		$this->app->singleton( Matthaeus::class, function () {
 			$client = new Client();
 
 			$client->authenticate( config( 'services.trello.api_key' ), '93b8b9d54b8a86d5be2e8a2ee4c6dbe192ac434f3443d75d408c47ff75447f53', Client::AUTH_URL_CLIENT_ID );
 
-			return new Mathaeus( $client );
+			return new Matthaeus( $client );
 		} );
 
 		$this->app->singleton( Mayar::class, function () {
