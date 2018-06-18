@@ -76,17 +76,21 @@
             }
         },
 
-        mounted() {
+        created() {
             setInterval(this.handler, 1000 * 60);
+
         },
-        handler(){
-            let vm = this;
-            axios.get('https://world-cup-json.herokuapp.com/matches/today')
-                .then(function (response) {
-                    if (response.data.length > 0){
-                        vm.matches = response.data;
-                    }
-                });
+        methods : {
+            handler(){
+                console.log('shit');
+                let vm = this;
+                axios.get('https://world-cup-json.herokuapp.com/matches/today')
+                    .then(function (response) {
+                        if (response.data.length > 0){
+                            vm.matches = response.data;
+                        }
+                    });
+            }
         }
     }
 </script>

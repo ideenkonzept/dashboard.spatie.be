@@ -41,11 +41,10 @@ new Vue({
         TimeWeather,
         Twitter,
         Uptime,
-        WorldCup,
         AnimatedTask,
-        NumberWidget
+        NumberWidget,
+        WorldCup,
     },
-
     created() {
         let options = {
             broadcaster: 'pusher',
