@@ -21,114 +21,68 @@
             return {
                 matches: [
                     {
-                        "match_number": 1,
-                        "location": "Arena Corinthians",
-                        "datetime": "2014-06-12T17:00:00.000-03:00",
-                        "status": "completed",
+                        "venue": "Nizhny Novgorod",
+                        "location": "Nizhny Novgorod Stadium",
+                        "status": "future",
+                        "time": null,
+                        "fifa_id": "300331499",
+                        "home_team_statistics": null,
+                        "away_team_statistics": null,
+                        "datetime": "2018-06-18T12:00:00Z",
+                        "last_event_update_at": null,
+                        "last_score_update_at": "2018-06-18T07:57:39Z",
                         "home_team": {
-                            "country": "Brazil",
-                            "code": "BRA",
-                            "goals": 3
+                            "country": "Sweden",
+                            "code": "SWE",
+                            "goals": 0
                         },
                         "away_team": {
-                            "country": "Croatia",
-                            "code": "CRO",
-                            "goals": 1
+                            "country": "Korea Republic",
+                            "code": "KOR",
+                            "goals": 0
                         },
-                        "winner": "Brazil",
-
-                        "home_team_events": [
-                            {
-                                "id": 11,
-                                "type_of_event": "goal-own",
-                                "player": "Marcelo",
-                                "time": "11"
-                            },
-                            {
-                                "id": 14,
-                                "type_of_event": "yellow-card",
-                                "player": "Neymar Jr",
-                                "time": "27"
-                            },
-                            {
-                                "id": 15,
-                                "type_of_event": "goal",
-                                "player": "Neymar Jr",
-                                "time": "29"
-                            },
-                            {
-                                "id": 13,
-                                "type_of_event": "substitution-in",
-                                "player": "Hernanes",
-                                "time": "63"
-                            },
-                            {
-                                "id": 12,
-                                "type_of_event": "substitution-in",
-                                "player": "Bernard",
-                                "time": "68"
-                            },
-                            {
-                                "id": 16,
-                                "type_of_event": "goal-penalty",
-                                "player": "Neymar Jr",
-                                "time": "71"
-                            },
-                            {
-                                "id": 19,
-                                "type_of_event": "yellow-card",
-                                "player": "L Gustavo",
-                                "time": "88"
-                            },
-                            {
-                                "id": 17,
-                                "type_of_event": "substitution-in",
-                                "player": "Ramires",
-                                "time": "88"
-                            },
-                            {
-                                "id": 18,
-                                "type_of_event": "goal",
-                                "player": "Oscar",
-                                "time": "901"
-                            }
-                        ],
-                        "away_team_events": [
-                            {
-                                "id": 23,
-                                "type_of_event": "substitution-in",
-                                "player": "BrozoviĆ",
-                                "time": "61"
-                            },
-                            {
-                                "id": 20,
-                                "type_of_event": "yellow-card",
-                                "player": "Corluka",
-                                "time": "66"
-                            },
-                            {
-                                "id": 21,
-                                "type_of_event": "yellow-card",
-                                "player": "Lovren",
-                                "time": "69"
-                            },
-                            {
-                                "id": 22,
-                                "type_of_event": "substitution-in",
-                                "player": "RebiĆ",
-                                "time": "78"
-                            }
-                        ]
+                        "winner": null,
+                        "winner_code": null,
+                        "home_team_events": [],
+                        "away_team_events": []
                     },
+                    {
+                        "venue": "Volgograd",
+                        "location": "Volgograd Arena",
+                        "status": "future",
+                        "time": null,
+                        "fifa_id": "300331554",
+                        "home_team_statistics": null,
+                        "away_team_statistics": null,
+                        "datetime": "2018-06-18T18:00:00Z",
+                        "last_event_update_at": null,
+                        "last_score_update_at": "2018-06-18T07:57:39Z",
+                        "home_team": {
+                            "country": "Tunisia",
+                            "code": "TUN",
+                            "goals": 0
+                        },
+                        "away_team": {
+                            "country": "England",
+                            "code": "ENG",
+                            "goals": 0
+                        },
+                        "winner": null,
+                        "winner_code": null,
+                        "home_team_events": [],
+                        "away_team_events": []
+                    }
                 ]
             }
         },
 
         mounted() {
+            setInterval(this.handler, 1000 * 60);
+        },
+        handler(){
             let vm = this;
-            axios.get('http://worldcup.sfg.io/matches/today')
+            axios.get('https://world-cup-json.herokuapp.com/matches/today')
                 .then(function (response) {
-                    console.log(response.data);
                     if (response.data.length > 0){
                         vm.matches = response.data;
                     }

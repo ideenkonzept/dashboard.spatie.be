@@ -1,30 +1,29 @@
 <template>
     <div class="match">
-        <span class="time" v-text="formattedTime">
-
-        </span>
+        <span class="time" v-text="formattedTime"></span>
 
         <div class="result">
-            <span class="team" v-text="info.home_team.country"></span>
 
-            <span class="goal" v-text="info.home_team.goals"></span>
-            <span>-</span>
-            <span class="goal" v-text="info.away_team.goals"></span>
+            <div class="team" v-text="info.home_team.code" style="text-align: left"></div>
 
-            <span class="team" v-text="info.away_team.country"></span>
+            <div class="goals">{{info.home_team.goals}} - {{info.away_team.goals}}</div>
+
+            <div class="team" v-text="info.away_team.code" style="text-align: right"></div>
         </div>
+        <hr>
     </div>
 </template>
 
 <script>
     import moment from 'moment-timezone';
+    import de from 'moment/locale/de';
 
     export default {
         props : ['info'],
 
         computed : {
             formattedTime () {
-                return moment(this.info.datetime).format('HH:mm');
+                return `${moment(this.info.datetime).format('HH:mm')} (${moment.duration(moment(this.info.datetime).diff(moment())).locale('de').humanize(true)})`;
             }
         }
     }
@@ -42,12 +41,18 @@
 
         .result {
             .team {
-                font-size: 30px;
-                margin: 0 10px;
+                font-size: 25px;
+                margin: 0 5px;
+                width: 30%;
+                display: inline-block;
             }
 
-            .goal {
+            .goals {
                 font-size: 20px;
+                font-weight: bold;
+                display: inline-block;
+                width: 20%;
+                text-align: center
             }
         }
     }
