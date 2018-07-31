@@ -10,7 +10,7 @@ namespace App\Services\Trello;
 
 use Trello\Client;
 
-class Sonia extends TrelloApi {
+class Jana extends TrelloApi {
 
 	public function __construct( Client $client ) {
 		parent::__construct( $client );

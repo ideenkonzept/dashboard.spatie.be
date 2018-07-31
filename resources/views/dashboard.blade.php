@@ -17,7 +17,7 @@
         <tasks team-member="michelle" position="c2" base-modifiers="female"></tasks>
 
         <animated-task v-if="waterThePlants" team-member="helen" position="d2" base-modifiers="male" image-link="{{asset('images/blumen_giessen.gif')}}"></animated-task>
-        <tasks v-else team-member="helen" position="d2" base-modifiers="male"></tasks>
+        <tasks v-else team-member="helen" position="d2" base-modifiers="female"></tasks>
 
         <tasks team-member="ali" position="c3" base-modifiers="male"></tasks>
         <tasks team-member="matthaeus" position="d3" base-modifiers="male"></tasks>
@@ -25,7 +25,7 @@
         <tasks team-member="ahmed" position="d4" base-modifiers="male"></tasks>
         <tasks team-member="mayar" position="e2" base-modifiers="male"></tasks>
         <tasks team-member="markus" position="e3" base-modifiers="male"></tasks>
-        <tasks team-member="sonia" position="e4" base-modifiers="female"></tasks>
+        <tasks team-member="jana" position="e4" base-modifiers="female"></tasks>
         <tasks team-member="kevin" position="f4" base-modifiers="male"></tasks>
         <time-weather position="e1" date-format="W. dddd DD.MM" time-zone="Europe/Berlin" weather-city="Wesel"></time-weather>
         {{--<time-weather position="f1" date-format="W. dddd DD.MM" time-zone="Europe/Berlin" weather-city="Emmerich"></time-weather>--}}

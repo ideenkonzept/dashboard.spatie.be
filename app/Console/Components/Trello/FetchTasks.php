@@ -12,7 +12,7 @@ use App\Services\Trello\Markus;
 use App\Services\Trello\Matthaeus;
 use App\Services\Trello\Mayar;
 use App\Services\Trello\Michelle;
-use App\Services\Trello\Sonia;
+use App\Services\Trello\Jana;
 use Illuminate\Console\Command;
 
 class FetchTasks extends Command {
@@ -28,7 +28,7 @@ class FetchTasks extends Command {
 			Katharina::class,
 			Helen::class,
 			Markus::class,
-			Sonia::class,
+			Jana::class,
 			Ali::class,
 			Matthaeus::class,
 			Mayar::class,
