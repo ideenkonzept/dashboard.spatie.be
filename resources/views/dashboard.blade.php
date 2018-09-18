@@ -14,7 +14,7 @@
         {{--<uptime position="b4"></uptime>--}}
         <world-cup position="a4:b4"></world-cup>
         <music position="c1:d1"></music>
-        <tasks team-member="michelle" position="c2" base-modifiers="female"></tasks>
+        <tasks team-member="" position="c2" base-modifiers="female"></tasks>
 
         <animated-task v-if="waterThePlants" team-member="helen" position="d2" base-modifiers="male" image-link="{{asset('images/blumen_giessen.gif')}}"></animated-task>
         <tasks v-else team-member="helen" position="d2" base-modifiers="female"></tasks>
